@@ -8,7 +8,17 @@
 </head>
 <body>
     <h1>Главная страница</h1>
-    <p>Просмотров: </p>
-    <p><a href="about.html" target="_self">Ссылка на страницу /about</a></p>    
+    <p id="view-counter">Страница просмотрена: загрузка...</p>
+    <p><a href="about.html" target="_self">Ссылка на страницу /about</a></p>
+    
+    <script>
+        const pageName = location.pathname.replace('/', '').replace('.html', '') || 'index';
+        fetch(`/api/views/${pageName}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('view-counter').textContent = `Страница просмотрена: ${data.views} раз.`;
+            })
+            .catch(error => console.error('Ошибка загрузки данных:', error));
+    </script>
 </body>
 </html>
