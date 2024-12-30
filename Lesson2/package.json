@@ -1,14 +1,19 @@
 {
-  "name": "lesson2",
+  "name": "zlnodetestlesson2",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "ZordonLord",
   "license": "ISC",
-  "description": "",
+  "description": "Math functions",
+  "repository":
+ { 
+       "type" : "git",
+       "url" : "https://github.com/npm/npm.git"
+ },
   "dependencies": {
     "uuid": "^11.0.3"
   }
